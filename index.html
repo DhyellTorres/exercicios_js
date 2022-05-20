@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios 01 - JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section>
+        <h2>01) Utilize JavaScript para alterar o valor do atributo src (source) de uma imagem.</h2>
+        <p>Implemente a função trafficLight() para alterar a imagem do semáforo. </p>
+        <form>
+            <input type="radio" id="off_light" name="traffic_light" onclick="trafficLight()"value="Desligado" checked>
+            <label for="off_light">Sinal Desligado</label>
+            <input type="radio" id="red_light" name="traffic_light" onclick="trafficLight('red')" value="Vermelho">
+            <label for="red_light">Sinal Vermelho</label>
+            <input type="radio" id="yellow_light" name="traffic_light" onclick="trafficLight('yellow')" value="Amarelo">
+            <label for="yellow_light">Sinal Amarelo</label>
+            <input type="radio" id="green_light" name="traffic_light" onclick="trafficLight('green')" value="Verde">
+            <label for="green_light">Sinal Verde</label>
+        </form>
+        <img id="img_traffic_light" src="img/all_off_light.png">
+    </section>
+    <section>
+        <h2>02) Utilize JavaScript para converter temperatura de Graus Celcius <strong>ºC</strong> 
+            para Graus Fahrenheit  <strong>ºF</strong>.</h2>
+        <p>Fórmula para converter Calcius para Fahrenheit:</p>
+        <img src="img/c-to-f-formula.png" alt="Fórmula para converter Graus Celcius para Graus Fahrenheit">
+        <form>
+            <label for="inputCelcius">Graus Celcius(ºC):</label>
+            <input type="number" id="inputCelcius" name="inputCelcius"  min="0" step=".01"  value="0" required  onchange="toFahrenheit()">
+            <label for="inputFahrenheit">Graus Fahrenheit(ºF)</label>
+            <input type="number" id="inputFahrenheit" name="inputFahrenheit"  min="32" step=".01" value="32" required onchange="toCelcius()">
+        </form>
+    </section>
+    <section>
+        <h2>03) Utilize JavaScript para calcular o Índice de Massa Corporal (IMC).</h2>
+        <p>Essa é a forma  mais popular para avaliar a  adiposidade corporal. A conta é simples: divida o peso em quilogramas
+            pela altura em metros  elevada ao quadrado. Ou seja, kg/m2, <strong>Para adultos</strong>, é considerado 
+            sobrepeso se o IMC for maior ou igual a 25. </p>
+        <form>
+            <label for="inputAltura">Altura(m):</label>
+            <input type="number" id="inputAltura" name="inputAltura"  min="0" max="2.50" step=".01"  required >
+            <label for="inputPeso">Peso(kg):</label>
+            <input type="number" id="inputPeso" name="inputPeso"  min="0" max="300" step=".01"  required >
+            
+            <input type="button" value="Calcular" onclick="imc()">
+            
+            <label for="inputIMC">IMC:</label>
+            <input type="text" id="inputIMC" name="inputIMC" disabled>
+        </form>
+        <table>
+            <tbody>
+                <tr>
+                    <th>IMC</th>
+                    <td>Menor que 18,5</td>
+                    <td>Entre 18,5 e 24,9</td>
+                    <td>Entre 25 e 29,9</td>
+                    <td>Entre 30 e 39,9</td>
+                    <td>Maior ou igual a 40</td>
+                </tr>
+                <tr>
+                    <th>Classificação</th>
+                    <td class="regular">Abaixo do peso</td>
+                    <td class="bom">Normal</td>
+                    <td class="regular">Sobrepeso</td>
+                    <td class="ruim">Obesidade</td>
+                    <td class="pessimo">Obesidade grave</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h2>04) Utilize JavaScript para preencher a tabela abaixo com dados do Array de objetos
+            <strong>carros</strong>.</h2>
+        <p>a) Utilize o Array para preencher a tabela.</p>
+        <p>b) Utilize o Array para preencher a tabela ordenando os carros pelos emplacamentos 
+            (Do mais emplacado para o menos emplacado).</p>
+        <p>c) Utilize o Array para preencher a tabela incluíndo o valor do IPVA 2022 dos
+            veículos (Considere que o valor do IPVA é 2%) </p>
+        <input type="button" value="Carregar tabela" onclick="tabelaCarros(carros)">
+        <input type="button" value="Carregar tabela ordenada por emplacamentos" onclick="tabelaCarrosMaisEmplacados(carros)">
+        <input type="button" value="Carregar tabela incluíndo o valor do IPVA" onclick="tabelaCarrosIpva(carros)">
+        <table id="tableCars">
+            <!-- preencher com JavaScript -->
+            
+        </table>
+    </section>
+    <script>
+        const carros = [
+            {marca: "Volkswagen", modelo:"Gol", emplacamentos: 66228, preco: 57240},
+            {marca: "Volkswagen", modelo:"T-Cross", emplacamentos: 62307, preco: 116536},
+            {marca: "Fiat", modelo:"Mobi", emplacamentos: 65847, preco: 47244},
+            {marca: "Fiat", modelo:"Argo", emplacamentos: 84644, preco: 67284},
+            {marca: "Chevrolet", modelo:"Onix", emplacamentos: 73623, preco: 69792},
+            {marca: "Chevrolet", modelo:"Onix Plus", emplacamentos: 54507, preco: 81520},
+            {marca: "Hyundai", modelo:"HB20", emplacamentos: 86455, preco: 68394},
+            {marca: "Hyundai", modelo:"Creta", emplacamentos: 64759, preco: 98410},
+            {marca: "Jeep", modelo:"Renegade", emplacamentos: 73913, preco: 97413},
+            {marca: "Jeep", modelo:"Compass", emplacamentos: 70906, preco: 138252},
+        ];
+    </script>
+    <script src="js/exercicios01.js"></script>
+</body>
+</html>
